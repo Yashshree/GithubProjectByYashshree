@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
 
+
 }
 android {
     compileSdkVersion 30
@@ -11,13 +12,15 @@ android {
 
     defaultConfig {
         applicationId "com.app.githubprojectbyyashshree"
-        minSdkVersion 26
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+
 
     buildTypes {
         release {
@@ -49,10 +52,10 @@ dependencies {
 
     def room_version = "2.2.5"
 
-    //Room Dependencies
+    /*//Room Dependencies
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
-
+*/
     implementation 'com.google.code.gson:gson:2.8.6'
 
     //viewmodel live data
@@ -64,4 +67,7 @@ dependencies {
     //networking library
     implementation 'com.amitshekhar.android:android-networking:1.0.2'
     implementation 'androidx.core:core-ktx:1.7.0-alpha01'
+
+
+
 }

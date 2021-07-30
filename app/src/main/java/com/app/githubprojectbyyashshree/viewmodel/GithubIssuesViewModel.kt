@@ -8,25 +8,13 @@ import com.app.githubprojectbyyashshree.repository.GithubIssuesRepository
 import org.json.JSONObject
 
 
-class GithubIssuesViewModel(var githubIssuesRepository: GithubIssuesRepository) :  ViewModel(){
+class GithubIssuesViewModel() :  ViewModel(){
 
     fun getGithubIssuesList(url:String): LiveData<ArrayList<GithubIssue>> {
-       /* return GithubIssuesRepository
+        return GithubIssuesRepository
             .instance
-            .getGithubIssuesList(url)*/
+            .getGithubIssuesList(url)
 
-        return githubIssuesRepository.getGithubIssuesList(url)
-
+//        return githubIssuesRepository.getGithubIssuesList(url)
     }
-
-    class GithubViewModelFactory(private val repository: GithubIssuesRepository) : ViewModelProvider.Factory {
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(GithubIssuesViewModel::class.java)) {
-                @Suppress("UNCHECKED_CAST")
-                return GithubIssuesViewModel(repository) as T
-            }
-            throw IllegalArgumentException("Unknown ViewModel class")
-        }
-    }
-
 }

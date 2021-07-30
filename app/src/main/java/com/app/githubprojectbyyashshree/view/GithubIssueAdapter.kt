@@ -37,7 +37,7 @@ class GithubIssueAdapter(private var issuesList: ArrayList<GithubIssue>) :
             holder.itemView.txtTitle.text = issue.title
         else
             holder.itemView.txtTitle.visibility = View.GONE
-        holder.itemView.txtDescription.text = issue.body
+        holder.itemView.txtDescription.text = issue.issueDetail
 
         val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
         val outputFormat = SimpleDateFormat("yyyy-MM-dd hh:mm:ss a")
