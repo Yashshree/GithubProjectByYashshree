@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.githubprojectbyyashshree.R
 import com.app.githubprojectbyyashshree.utils.Constants
+import com.app.githubprojectbyyashshree.utils.GithubApplication
 import com.app.githubprojectbyyashshree.viewmodel.GithubIssuesViewModel
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_github_issues.*
@@ -29,6 +30,10 @@ class GithubIssuesActivity : AppCompatActivity() {
     private fun initView() {
         githubIssuesViewModel =
             ViewModelProvider.NewInstanceFactory().create(GithubIssuesViewModel::class.java)
+
+       /* githubIssuesViewModel=
+            GithubIssuesViewModel((application as GithubApplication).repository)
+*/
 
         githubIssuesViewModel.getGithubIssuesList(Constants.GET_GITHUB_ISSUES).observe(this,
             Observer {

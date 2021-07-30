@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.app.githubprojectbyyashshree.models.GithubIssue
 import com.app.githubprojectbyyashshree.models.User
+import com.app.githubprojectbyyashshree.room.dao.GithubIssuesDao
 import com.app.githubprojectbyyashshree.utils.Constants
 import com.enyotalearning.learninghub.utils.WebServicesHelper
 import com.google.gson.Gson
@@ -39,6 +40,9 @@ class GithubIssuesRepository() {
 
                     val issuesList: ArrayList<GithubIssue> = Gson().fromJson(response, issuesListType)
 
+                   /* issuesList.forEach {
+                        githubIssuesDao.insert(it)
+                    }*/
 
                     data.value = issuesList
                 }
@@ -46,6 +50,8 @@ class GithubIssuesRepository() {
                 override fun onError(errorMessage: String) {
                     Log.e("error","error")
 
+                    data.value = null
+                    //data.value = githubIssuesDao.getAllGithubIssues()
 
                 }
 

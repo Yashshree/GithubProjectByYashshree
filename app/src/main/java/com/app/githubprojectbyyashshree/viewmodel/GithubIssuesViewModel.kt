@@ -11,10 +11,6 @@ import org.json.JSONObject
 class GithubIssuesViewModel() :  ViewModel(){
 
     fun getGithubIssuesList(url:String): LiveData<ArrayList<GithubIssue>> {
-        return GithubIssuesRepository
-            .instance
-            .getGithubIssuesList(url)
-
-//        return githubIssuesRepository.getGithubIssuesList(url)
+        return GithubIssuesRepository.instance.getGithubIssuesList(url)
     }
 }
